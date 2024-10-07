@@ -31,7 +31,7 @@ header h1 {
     align-items: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 50px;
+    gap: 100px;
     width: 100%;
     max-width: 1000px;
     margin-bottom: 50px;
