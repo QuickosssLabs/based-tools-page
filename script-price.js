@@ -37,7 +37,7 @@ async function payWithMetamask(priceInEth, toolName) {
 }
 
 // Form submission handler
-document.getElementById('order-form').addEventListener('submit', function(e) {
+document.getElementById('payment-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
