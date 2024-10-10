@@ -16,7 +16,7 @@ async function payWithMetamask(priceInEth, toolName) {
             to: '0x2727975E8C02360B36c85b127EA5Cf45291e183d',
             from: account,
             value: priceInWei.toHexString(),
-            chainId: '0x14A14', //0x64 for mainnet
+            chainId: '0x14A34', //0x64 for mainnet
         };
 
         const txHash = await ethereum.request({
