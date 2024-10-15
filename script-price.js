@@ -7,22 +7,23 @@ document.querySelector('.submit-details').addEventListener('click', function(e) 
     const collectionName = document.getElementById('collectionName').value;
     const collectionLink = document.getElementById('collectionLink').value;
     const collectionLogo = document.getElementById('collectionLogo').value;
+    const paymentAddress = document.getElementById('paymentAddress').value;
     const toolName = document.getElementById('toolName').value;
 
     console.log(`Name: ${name}, Email: ${email}, Collection Name: ${collectionName}, Tool Name: ${toolName}`);
 
     // Ensure all required fields are filled
-    if (!name || !collectionName || !collectionLink) {
+    if (!name || !collectionName || !collectionLink || !paymentAddress) {
         alert("Please fill in all required fields.");
         return;
     }
 
     // Send email notification
-    sendEmailNotification(name, email, collectionName, collectionLink, collectionLogo, toolName);
+    sendEmailNotification(name, email, collectionName, collectionLink, collectionLogo, toolName, paymentAddress);
 });
 
 
-function sendEmailNotification(name, email, collectionName, collectionLink, collectionLogo, tool, amount, transactionId) {
+function sendEmailNotification(name, email, collectionName, collectionLink, collectionLogo, tool, paymentAddress) {
     const templateParams = {
         user_name: name,
         user_email: email,
@@ -30,8 +31,7 @@ function sendEmailNotification(name, email, collectionName, collectionLink, coll
         collection_link: collectionLink,
         collection_logo: collectionLogo,
         tool: tool,
-        amount: amount,
-        transaction_id: transactionId
+        address: paymentAddress
     };
 
     emailjs.send('service_op7gmfw', 'template_yu66ga3', templateParams)
