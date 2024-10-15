@@ -73,3 +73,25 @@ document.querySelectorAll('.toggle-requirements').forEach(button => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const popup = document.getElementById("promoPopup");
+    const closeBtn = document.querySelector(".close-btn");
+    const claimOfferBtn = document.getElementById("claimOffer");
+  
+    popup.style.display = "block";
+  
+    closeBtn.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+  
+    claimOfferBtn.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+  
+    window.addEventListener("click", function(event) {
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    });
+  });
