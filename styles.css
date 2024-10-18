@@ -172,3 +172,100 @@ footer a {
 footer a:hover {
     color: #8cc0e3;
 }
+
+/* Media Queries pour les tablettes */
+@media (max-width: 1024px) {
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem; /* Réduire la taille du titre */
+    }
+
+    nav ul {
+        flex-direction: column; /* Empile les liens de navigation sur les tablettes */
+        gap: 10px; /* Réduit l'espacement entre les éléments */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Réduit légèrement la taille des liens */
+        padding: 8px 15px;
+    }
+
+    #search-bar {
+        width: 90%; /* Augmente la largeur de la barre de recherche */
+        font-size: 1.1rem;
+    }
+
+    .tools-container {
+        grid-template-columns: repeat(3, 1fr); /* Ajuste la grille pour des colonnes plus petites */
+        gap: 20px; /* Réduit l'espacement entre les cartes */
+        max-width: 95%
+    }
+
+    .tool-card {
+        padding: 10px;
+        max-width: 100%; /* Permet à la carte de s'étendre sur toute la largeur si nécessaire */
+        min-width: 180px; /* Réduit la largeur minimale pour les petits écrans */
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+}
+
+/* Media Queries pour les téléphones */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Réduire davantage la taille du titre pour les petits écrans */
+    }
+
+    nav ul {
+        flex-direction: column; /* Empile les liens de navigation */
+        gap: 8px; /* Réduit l'espacement entre les éléments */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Réduire la taille des liens */
+        padding: 6px 12px;
+    }
+
+    #search-bar {
+        width: 95%; /* Barre de recherche prend toute la largeur */
+        font-size: 1rem;
+    }
+
+    /* Modifier la grille pour afficher deux colonnes */
+    .tools-container {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur petits écrans */
+        gap: 15px; /* Espace entre les cartes */
+        max-width: 95%;
+    }
+
+    .tool-card {
+        padding: 8px;
+        max-width: 100%; /* Les cartes occupent toute la largeur disponible dans la colonne */
+        min-width: auto;
+    }
+
+    .tool-card h2 {
+        font-size: 1.3rem; /* Réduire la taille du titre de la carte */
+    }
+
+    .tool-card p {
+        font-size: 0.9rem; /* Réduire la taille du texte de description */
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.9rem; /* Réduire la taille du texte du footer */
+    }
+}
