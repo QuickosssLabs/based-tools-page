@@ -266,3 +266,52 @@ footer {
     text-align: center;
     margin-top: 50px;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    section#pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tool-section {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    .tool-image {
+        width: 100px;
+    }
+
+    #instructions {
+        padding: 15px;
+    }
+}
