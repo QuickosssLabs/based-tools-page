@@ -101,7 +101,7 @@ nav ul li a:hover {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Cards will maintain a minimum width of 280px */
     gap: 30px; /* Reduced gap to tighten the layout */
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-bottom: 50px;
 }
 
