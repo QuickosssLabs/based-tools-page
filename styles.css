@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -17,36 +17,43 @@ body {
 }
 
 .header-container {
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-radius: 12px;
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
     width: 100%;
     max-width: 1200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     margin-bottom: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: #ffffff;
+    font-size: 3rem;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 800;
 }
 
 /* Navigation Styles */
 nav {
-    margin: 5px 0;
+    margin: 15px 0;
     text-align: center;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     list-style: none;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -56,121 +63,167 @@ nav ul li {
 nav ul li a {
     color: #3498db;
     text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px 20px;
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid rgba(52, 152, 219, 0.2);
 }
 
 nav ul li a:hover {
-    color: #53b9fc;
+    background: rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+nav ul li a.active {
+    background: rgba(52, 152, 219, 0.3);
+    color: #fff;
+    border-color: rgba(52, 152, 219, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
 /* Search Bar Styles */
 .search-container {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
 }
 
 #search-bar {
     width: 80%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1.2rem;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 #search-bar:focus {
     outline: none;
-    border: 2px solid #3498db;
+    border-color: #3498db;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .tool-section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #ffffff;
     text-align: center;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+.tool-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 3px;
 }
 
 .tool-section {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .tools-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Cards will maintain a minimum width of 280px */
-    gap: 30px; /* Reduced gap to tighten the layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
     width: 100%;
     max-width: 1400px;
     margin-bottom: 50px;
+    padding: 0 15px;
 }
 
 .tool-card {
-    background-color: #1c1c1c;
-    border-radius: 12px;
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: center;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    max-width: 300px; /* Set a maximum width for the cards */
-    min-width: 280px; /* Ensures a minimum width */
-    margin: 0 auto; /* Center the card if it's smaller than the available space */
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 320px;
+    min-width: 280px;
+    margin: 0 auto;
 }
 
 .tool-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.6);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(52, 152, 219, 0.3);
+    border-color: rgba(52, 152, 219, 0.3);
 }
 
 .tool-card img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     height: auto;
+    transition: transform 0.3s ease;
 }
 
-.tool-card h2 {
-    margin: 15px 0 10px;
+.tool-card:hover img {
+    transform: scale(1.05);
+}
+
+.tool-card h3 {
+    margin: 20px 0 12px;
     font-size: 1.5rem;
     color: #3498db;
+    font-weight: 600;
 }
 
 .tool-card p {
     font-size: 1rem;
-    color: #b3b3b3;
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .tool-card a {
     color: inherit;
     text-decoration: none;
-}
-
-.tool-card a:hover {
-    color: #8cc0e3;
+    display: block;
 }
 
 footer {
     text-align: center;
     margin-top: auto;
-    padding: 20px;
-    background-color: #1c1c1c;
+    padding: 30px;
+    background: rgba(28, 28, 28, 0.8);
+    backdrop-filter: blur(10px);
     border-top: 3px solid #3498db;
     width: 100%;
 }
 
 footer p {
-    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
 }
 
 footer a {
     color: #3498db;
     text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 footer a:hover {
-    color: #8cc0e3;
+    color: #2ecc71;
 }
 
 /* Media Queries pour les tablettes */
@@ -180,38 +233,50 @@ footer a:hover {
     }
 
     header h1 {
-        font-size: 2rem; /* Réduire la taille du titre */
+        font-size: 2rem;
+    }
+
+    .header-container {
+        padding: 20px;
+    }
+
+    nav {
+        margin: 10px 0;
     }
 
     nav ul {
-        flex-direction: column; /* Empile les liens de navigation sur les tablettes */
-        gap: 10px; /* Réduit l'espacement entre les éléments */
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    nav ul li {
+        width: 100%;
     }
 
     nav ul li a {
-        font-size: 1rem; /* Réduit légèrement la taille des liens */
-        padding: 8px 15px;
+        font-size: 1rem;
+        padding: 12px;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     #search-bar {
-        width: 90%; /* Augmente la largeur de la barre de recherche */
+        width: 90%;
         font-size: 1.1rem;
     }
 
     .tools-container {
-        grid-template-columns: repeat(3, 1fr); /* Ajuste la grille pour des colonnes plus petites */
-        gap: 20px; /* Réduit l'espacement entre les cartes */
-        max-width: 95%
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 95%;
     }
 
     .tool-card {
-        padding: 10px;
-        max-width: 100%; /* Permet à la carte de s'étendre sur toute la largeur si nécessaire */
-        min-width: 180px; /* Réduit la largeur minimale pour les petits écrans */
-    }
-
-    footer p {
-        font-size: 1rem;
+        padding: 15px;
+        max-width: 100%;
+        min-width: 200px;
     }
 }
 
@@ -221,44 +286,51 @@ footer a:hover {
         padding: 10px;
     }
 
+    .header-container {
+        padding: 15px;
+    }
+
     header h1 {
-        font-size: 1.8rem; /* Réduire davantage la taille du titre pour les petits écrans */
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    nav {
+        margin: 5px 0;
     }
 
     nav ul {
-        flex-direction: column; /* Empile les liens de navigation */
-        gap: 8px; /* Réduit l'espacement entre les éléments */
+        gap: 8px;
     }
 
     nav ul li a {
-        font-size: 0.9rem; /* Réduire la taille des liens */
-        padding: 6px 12px;
+        font-size: 0.9rem;
+        padding: 10px;
     }
 
     #search-bar {
-        width: 95%; /* Barre de recherche prend toute la largeur */
+        width: 95%;
         font-size: 1rem;
+        padding: 12px 20px;
     }
 
-    /* Modifier la grille pour afficher deux colonnes */
     .tools-container {
-        grid-template-columns: repeat(2, 1fr); /* Deux colonnes sur petits écrans */
-        gap: 15px; /* Espace entre les cartes */
-        max-width: 95%;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
     }
 
     .tool-card {
-        padding: 8px;
-        max-width: 100%; /* Les cartes occupent toute la largeur disponible dans la colonne */
+        padding: 12px;
         min-width: auto;
     }
 
-    .tool-card h2 {
-        font-size: 1.3rem; /* Réduire la taille du titre de la carte */
+    .tool-card h3 {
+        font-size: 1.3rem;
     }
 
     .tool-card p {
-        font-size: 0.9rem; /* Réduire la taille du texte de description */
+        font-size: 0.9rem;
     }
 
     footer {
@@ -266,6 +338,6 @@ footer a:hover {
     }
 
     footer p {
-        font-size: 0.9rem; /* Réduire la taille du texte du footer */
+        font-size: 0.9rem;
     }
 }
